@@ -1,0 +1,134 @@
+.Blog {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .Blog_content {
+    // padding: 100px 200px;
+    padding: 70px 200px;
+    display: flex;
+    justify-content: space-around;
+    .Blog_content_left {
+      width: 28%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      flex-direction: column; /* 从上到下排列元素 */
+      background: linear-gradient(135deg, #00bcd4, #009688);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      //   margin: 20px auto; /* 使方块居中 */
+      .Blog_content_left_avatar {
+        margin-top: 20px;
+      }
+      .Blog_content_left_name {
+        margin-top: 20px;
+        font-size: 30px;
+        font-family: serif;
+      }
+      .Blog_content_left_num {
+        // width: 100%;
+        margin-top: 20px;
+        margin-right: 20ox;
+        display: flex;
+        justify-content: center; /* 在容器内均匀分布项 */
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        // padding: 0 20px !important;
+        .Blog_content_left_num_num {
+          margin-top: 15px;
+        }
+      }
+      .Blog_content_left_num > div {
+        flex: 1; /* 使每个项具有相同的宽度 */
+        margin: 0 20px; /* 左右间距 */
+      }
+      .Blog_content_left_button {
+        margin-top: 20px;
+
+        .ant-btn {
+          position: relative;
+          background: #66cbba; /* 初始背景颜色 */
+          padding: 0 60px;
+          border: none; /* 去掉默认边框 */
+          color: white; /* 文字颜色 */
+          overflow: hidden; /* 确保伪元素不会溢出 */
+          font-size: 16px; /* 字体大小根据需要调整 */
+          text-align: center; /* 文字居中 */
+          cursor: pointer;
+          transition: background 0.3s ease; /* 背景颜色平滑过渡 */
+          border-radius: 16px; /* 圆角 */
+          z-index: 1; /* 确保按钮层级高于伪元素 */
+          position: relative; /* 确保伪元素位置正确 */
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%; /* 从按钮左侧外部开始 */
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              135deg,
+              rgb(235, 89, 59),
+              rgb(235, 82, 109)
+            ); /* 触碰时的目标渐变色 */
+            transition: left 0.3s ease; /* 从左到右平滑过渡 */
+            z-index: 0; /* 伪元素层级低于按钮 */
+          }
+
+          &:hover::before {
+            left: 0; /* 使渐变色效果覆盖整个按钮 */
+          }
+
+          /* 确保文本内容在渐变效果之上 */
+          span {
+            position: relative;
+            z-index: 1; /* 高于伪元素 */
+          }
+        }
+      }
+    }
+    .Blog_content_left:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* 加强的阴影效果 */
+      transform: translateY(-5px); /* 轻微上移效果 */
+    }
+    .Blog_content_right {
+      width: 60%;
+      .masonry-item {
+        border-radius: 8px;
+        &:hover {
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* 加强的阴影效果 */
+          transform: translateY(-1px); /* 轻微上移效果 */
+        }
+        .Blog_content_right_title {
+          font-size: 20px;
+          margin-bottom: 10px;
+          font-weight: 400;
+        }
+        .Blog_content_right_content {
+          font-size: 14px;
+          font-weight: 200 !important;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2; /* 限制显示两行文本 */
+          line-height: 1.5em; /* 行高（根据需要调整） */
+          max-height: 3em; /* 限制最大高度（行高 * 行数） */
+        }
+      }
+      // .Blog_content_right_header {
+      //   border: 1px dashed gray; /* 使用虚线边框 */
+      //   border-radius: 8px; /* 设置边角圆润 */
+      //   margin-bottom: 20px;
+      // }
+    }
+  }
+}

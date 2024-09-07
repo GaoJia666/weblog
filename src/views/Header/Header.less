@@ -1,0 +1,61 @@
+.Header {
+  position: fixed;
+  width: 100%;
+  color: white;
+  // background-color: rgba(0, 0, 0, 0.5); /* 黑色，70% 透明度 */
+  z-index: 1000; /* 确保其在其他元素之上 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  .Header_Right {
+    color: #fff;
+    font-size: 25px;
+    margin-left: 20px;
+  }
+  .Header_Left {
+    display: flex;
+    .Header_Left_Item {
+      margin-right: 30px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      .Header_Left_Item_Text {
+        margin-left: 10px;
+      }
+      .Header_Left_Item_Login {
+        display: flex; /* 使用 flexbox 居中对齐内容 */
+        justify-content: center; /* 横向居中对齐 */
+        align-items: center; /* 纵向居中对齐 */
+        width: 40px; /* 圆圈的宽度 */
+        height: 40px; /* 圆圈的高度 */
+        background-color: #1092af; /* 圆圈的背景颜色 */
+        border-radius: 50%; /* 圆角半径设置为 50% 使其成为圆形 */
+        color: white; /* 字体颜色 */
+        // font-size: 24px; /* 字体大小 */
+        font-weight: bold; /* 字体加粗 */
+      }
+    }
+  }
+}
+.homeButs {
+  text-align: center; /* 文本内容居中对齐 */
+  color: #000;
+  div {
+    margin: 5px 0; /* 每个子元素上下间距为 5px */
+    padding: 5px 30px;
+    cursor: default;
+    border: 1px solid #ccc;
+    opacity: 0.5 !important; /* 设置透明度，0.8 表示 80% 不透明 */
+    border-radius: 10px; /* 设置边角圆度，值越大圆角越圆 */
+  }
+  div:hover {
+    background-color: blue; /* 当鼠标悬停时，背景颜色变为蓝色 */
+    color: white; /* 文字颜色变为白色以保持对比度 */
+  }
+}
+
+.ant-popover-inner {
+  opacity: 0.8; /* 设置透明度，0.8 表示 80% 不透明 */
+  transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
